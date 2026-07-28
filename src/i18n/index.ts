@@ -125,7 +125,7 @@ export const en: Dict = {
     heading: 'Our product',
     name: 'I/O Smith',
     body: 'A config-driven industrial integration engine. Connect machines, brokers, databases, and APIs with declarative YAML flows — no glue code, no fleet of one-off services.',
-    cta: 'Visit smithio.valinor.dev.br',
+    cta: 'Visit iosmith.valinor.dev.br',
     note: 'Built by Valinor from years of solving the same integration problems on real factory floors.',
   },
   how: {
@@ -229,7 +229,7 @@ export const pt: Dict = {
     heading: 'Nosso produto',
     name: 'I/O Smith',
     body: 'Um motor de integração industrial orientado a configuração. Conecte máquinas, brokers, bancos de dados e APIs com fluxos declarativos em YAML — sem código de cola, sem uma frota de serviços descartáveis.',
-    cta: 'Visite smithio.valinor.dev.br',
+    cta: 'Visite iosmith.valinor.dev.br',
     note: 'Criado pela Valinor a partir de anos resolvendo os mesmos problemas de integração em chão de fábrica de verdade.',
   },
   how: {

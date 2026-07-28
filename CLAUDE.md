@@ -8,7 +8,7 @@ Visual identity mirrors the I/O Smith landing page (dark GitHub-style tokens in
 - All copy lives in `src/i18n/index.ts` (en + pt objects, typed by `Dict`).
   Edit copy there only — components render from it. Company voice, never personal.
 - Deploy target: Netlify → valinor.dev.br (+ www). The I/O Smith site gets
-  `smithio.valinor.dev.br` on its own Netlify site. DNS stays at Registro.br.
+  `iosmith.valinor.dev.br` on its own Netlify site. DNS stays at Registro.br.
   Full deploy/DNS steps and post-launch checklist: `README.md`.
 - Contact form uses Netlify Forms (`name="contact"`); keep the hidden
   `form-name` input if restructuring.

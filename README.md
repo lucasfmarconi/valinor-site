@@ -21,7 +21,7 @@ npm run build    # output in dist/
    ```
 2. Netlify → Add new site → Import from GitHub → `valinor-site`. Build command and publish dir come from `netlify.toml`.
 3. Site settings → Domain management → add `valinor.dev.br` (primary) and `www.valinor.dev.br`.
-4. On the **existing I/O Smith Netlify site** → Domain management → add `smithio.valinor.dev.br`.
+4. On the **existing I/O Smith Netlify site** → Domain management → add `iosmith.valinor.dev.br`.
 5. Forms → `contact` → Notifications → Email → valinordev@proton.me.
 
 ## DNS (Registro.br → painel DNS)
@@ -30,13 +30,13 @@ npm run build    # output in dist/
 |---|---|---|
 | `valinor.dev.br` (apex) | A | `75.2.60.5` |
 | `www` | CNAME | `<valinor-site>.netlify.app.` |
-| `smithio` | CNAME | `<io-smith-site>.netlify.app.` |
+| `iosmith` | CNAME | `<io-smith-site>.netlify.app.` |
 
 HTTPS certs are auto-provisioned by Netlify after DNS propagates.
 
 ## Post-launch checklist
 
-- [ ] `valinor.dev.br`, `www.`, `smithio.` resolve with valid certs; `www` redirects to apex
+- [ ] `valinor.dev.br`, `www.`, `iosmith.` resolve with valid certs; `www` redirects to apex
 - [ ] Contact form submission arrives (check spam)
 - [ ] EN/PT toggle works both ways; `hreflang` present in both pages
 - [ ] Lighthouse ≥ 95 performance/accessibility
