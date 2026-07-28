@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Expertise from '../components/Expertise.astro';
+import Products from '../components/Products.astro';
+import Engagement from '../components/Engagement.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { en } from '../i18n';
+---
+
+<Base locale="en" t={en}>
+  <Header t={en} />
+  <main>
+    <Hero t={en} />
+    <Services t={en} />
+    <Expertise t={en} />
+    <Products t={en} />
+    <Engagement t={en} />
+    <Contact t={en} />
+  </main>
+  <Footer t={en} />
+</Base>

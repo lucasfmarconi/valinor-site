@@ -1,0 +1,54 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict }
+const { t } = Astro.props;
+---
+
+<section id="expertise" aria-label={t.expertise.heading}>
+  <div class="container">
+    <h2>{t.expertise.heading}</h2>
+    <div class="grid">
+      {t.expertise.groups.map((g) => (
+        <div class="group">
+          <h3>{g.title}</h3>
+          <p><code>{g.items}</code></p>
+        </div>
+      ))}
+    </div>
+    <h2 class="ind-heading">{t.expertise.industriesHeading}</h2>
+    <ul class="industries" role="list">
+      {t.expertise.industries.map((i) => <li>{i}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  section { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  h2 { font-size: 1.875rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  h3 { font-size: 1rem; color: var(--color-accent); }
+  .group p { margin: 0; }
+  .group code { color: var(--color-text-muted); font-size: 0.875rem; }
+  .ind-heading { font-size: 1.25rem; }
+  .industries {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .industries li {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.375rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text);
+  }
+</style>

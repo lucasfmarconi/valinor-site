@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Netlify Forms: after first deploy, configure notifications in the dashboard:
+# Forms → contact → Notifications → Email notification → valinordev@proton.me

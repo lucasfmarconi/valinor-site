@@ -1,0 +1,32 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict }
+const { t } = Astro.props;
+---
+
+<section id="services" aria-label={t.services.heading}>
+  <div class="container">
+    <h2>{t.services.heading}</h2>
+    <p class="muted intro">{t.services.intro}</p>
+    <div class="grid">
+      {t.services.cards.map((card) => (
+        <article class="card">
+          <h3>{card.title}</h3>
+          <p class="muted">{card.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 { font-size: 1.875rem; }
+  .intro { max-width: 44rem; margin-bottom: 2rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  h3 { font-size: 1.125rem; }
+  article p { margin: 0; font-size: 0.9375rem; }
+</style>

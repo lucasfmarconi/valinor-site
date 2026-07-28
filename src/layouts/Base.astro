@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import type { Dict, Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  t: Dict;
+}
+
+const { locale, t } = Astro.props;
+const site = 'https://valinor.dev.br';
+const canonical = locale === 'en' ? `${site}/` : `${site}/pt/`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Valinor Software Engineering',
+  legalName: 'Valinor Consultoria e Engenharia de Software',
+  taxID: '41.814.250/0001-42',
+  url: site,
+  email: 'valinordev@proton.me',
+  address: { '@type': 'PostalAddress', addressCountry: 'BR' },
+  sameAs: ['https://smithio.valinor.dev.br'],
+};
+---
+
+<!doctype html>
+<html lang={locale === 'en' ? 'en' : 'pt-BR'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={`${site}/`} />
+    <link rel="alternate" hreflang="pt-BR" href={`${site}/pt/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}/`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${site}/og-image.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <!-- 42: this site knows the Answer. It's in the CNPJ. -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

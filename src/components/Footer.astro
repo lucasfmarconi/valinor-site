@@ -1,0 +1,35 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict }
+const { t } = Astro.props;
+---
+
+<footer aria-label="Site footer">
+  <div class="container">
+    <p class="legal">
+      {t.footer.legal} · {t.footer.cnpj}
+      <span class="egg" title={t.footer.easterEggTitle}>{t.footer.easterEgg}</span>
+    </p>
+    <p class="copyright">
+      &copy; {new Date().getFullYear()} {t.footer.legal}. {t.footer.rights}
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 3rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .legal { color: var(--color-text-muted); font-size: 0.875rem; margin: 0 0 0.5rem; }
+  .egg {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    font-style: italic;
+    cursor: help;
+  }
+  .copyright { color: var(--color-text-muted); font-size: 0.8125rem; margin: 0; }
+</style>

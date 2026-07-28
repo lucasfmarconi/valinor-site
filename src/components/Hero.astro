@@ -1,0 +1,42 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict }
+const { t } = Astro.props;
+---
+
+<section aria-label="Hero">
+  <div class="container">
+    <h1>{t.hero.title}</h1>
+    <p class="sub">{t.hero.sub}</p>
+    <div class="ctas">
+      <a class="btn-primary" href="#contact">{t.hero.ctaPrimary}</a>
+      <a class="btn-secondary" href="https://smithio.valinor.dev.br">{t.hero.ctaSecondary}</a>
+    </div>
+    <ul class="trust" role="list">
+      {t.hero.trust.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  section { padding-top: 4.5rem; padding-bottom: 3.5rem; }
+  h1 { font-size: clamp(2rem, 5vw, 3.25rem); max-width: 40rem; }
+  .sub {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    max-width: 44rem;
+    margin: 0 0 2rem;
+  }
+  .ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+  .trust {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+  .trust li::before { content: '✓ '; color: var(--color-success); }
+</style>

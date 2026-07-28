@@ -1,0 +1,59 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict }
+const { t } = Astro.props;
+---
+
+<header>
+  <div class="container inner">
+    <span class="wordmark"><code>valinor</code><span class="dot">.dev.br</span></span>
+    <nav aria-label="Main navigation">
+      <a href="#services">{t.nav.services}</a>
+      <a href="#expertise">{t.nav.expertise}</a>
+      <a href="#product">{t.nav.product}</a>
+      <a href="#how">{t.nav.how}</a>
+      <a href="#contact">{t.nav.contact}</a>
+      <a class="lang" href={t.nav.langHref} rel="alternate">{t.nav.langLabel}</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+    padding: 1rem 1.5rem;
+  }
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .wordmark code {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .dot {
+    color: var(--color-text-muted);
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.875rem;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+  }
+  nav a { color: var(--color-text-muted); }
+  nav a:hover { color: var(--color-accent); text-decoration: none; }
+  .lang {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0 0.5rem;
+    color: var(--color-text);
+  }
+  .lang:hover { border-color: var(--color-accent); }
+</style>

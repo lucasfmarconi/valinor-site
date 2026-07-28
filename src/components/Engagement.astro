@@ -1,0 +1,42 @@
+---
+import type { Dict } from '../i18n';
+interface Props { t: Dict }
+const { t } = Astro.props;
+---
+
+<section id="how" aria-label={t.how.heading}>
+  <div class="container">
+    <h2>{t.how.heading}</h2>
+    <ol class="steps" role="list">
+      {t.how.steps.map((step, i) => (
+        <li class="card">
+          <span class="num">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3>
+          <p class="muted">{step.body}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="remote muted">{t.how.remote}</p>
+  </div>
+</section>
+
+<style>
+  h2 { font-size: 1.875rem; }
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    counter-reset: step;
+  }
+  .num {
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+  }
+  h3 { font-size: 1.0625rem; margin-top: 0.25rem; }
+  .steps p { margin: 0; font-size: 0.9375rem; }
+  .remote { font-size: 0.9375rem; }
+</style>
