@@ -22,7 +22,7 @@ npm run build    # output in dist/
 2. Netlify → Add new site → Import from GitHub → `valinor-site`. Build command and publish dir come from `netlify.toml`.
 3. Site settings → Domain management → add `valinor.dev.br` (primary) and `www.valinor.dev.br`.
 4. On the **existing I/O Smith Netlify site** → Domain management → add `iosmith.valinor.dev.br`.
-5. Forms → `contact` → Notifications → Email → valinordev@proton.me.
+5. Forms → `contact` → Notifications → Email → mail@valinor.dev.br.
 
 ## DNS (Registro.br → painel DNS)
 
